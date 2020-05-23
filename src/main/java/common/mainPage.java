@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class mainPage
 {
-    @FindBy(how = How.NAME, using ="firstname")
+/*    @FindBy(how = How.NAME, using ="firstname")
     public WebElement txt_firstName;
 
     @FindBy(how = How.NAME, using ="lastname")
@@ -69,5 +69,5 @@ public class mainPage
         Month.selectByIndex(Integer.parseInt(values[1]));
         Day.selectByVisibleText(values[0]);
         Year.selectByVisibleText(values[2]);
-    }
+    }*/
 }
