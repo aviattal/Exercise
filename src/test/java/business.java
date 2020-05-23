@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class business
 {
     protected static WebDriver driver;
-  //  public static mainPage facebookLogin ;
+    public static mainPage facebookLogin ;
 
     @BeforeClass
     public void start()
@@ -32,8 +32,8 @@ public class business
     @Test
     public void test1_signUp()
     {
-  /*      facebookLogin.signUp(commonMethodsClass.getData("firstName"),commonMethodsClass.getData("lastName"), "bill.gates@microsoft.com", "12345","28/3/1956");
-        commonMethodsClass.verifyTextInElement(facebookLogin.error, "Your password must be at least 6 characters long. Please try another");*/
+        facebookLogin.signUp(commonMethodsClass.getData("firstName"),commonMethodsClass.getData("lastName"), "bill.gates@microsoft.com", "12345","28/3/1956");
+        commonMethodsClass.verifyTextInElement(facebookLogin.error, "Your password must be at least 6 characters long. Please try another");
     }
 
 }
