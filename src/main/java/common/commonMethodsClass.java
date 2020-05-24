@@ -40,6 +40,8 @@ public class commonMethodsClass
     }
     public static void verifyTextInElement(WebElement element, String text)
     {
+
         assertEquals(element.getText(), text);
     }
+
 }

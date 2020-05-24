@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Enviroment>
-    <urlToOpen>"https://www.facebook.com"</urlToOpen>
-    <firstName>"Bill"</firstName>
-    <lastName>"Gates"</lastName>
+    <urlToOpen>"https://www.github.myshopify.com"</urlToOpen>
 </Enviroment>
