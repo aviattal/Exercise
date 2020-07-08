@@ -20,14 +20,15 @@ public class business
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.navigate().to("http://www.ynet.co.il");
         String urlToOpen = commonMethodsClass.getData("urlToOpen");
         driver.get(urlToOpen);
     }
-    @AfterClass
+    /*@AfterClass
     public void close()
     {
         driver.quit();
-    }
+    }*/
 
     @Test
     public void test1_signUp()
