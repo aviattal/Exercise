@@ -3,6 +3,7 @@ package common;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.w3c.dom.Document;
@@ -41,5 +42,14 @@ public class commonMethodsClass
     public static void verifyTextInElement(WebElement element, String text)
     {
         assertEquals(element.getText(), text);
+    }
+
+    public static void insertTextInElement (WebElement element, String text)
+    {
+        element.sendKeys(text);
+    }
+    public static void numOfElements (List<WebElement> elems , int expectedValue)
+    {
+        assertEquals(elems.size(),expectedValue);
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Enviroment>
-    <urlToOpen>https://www.facebook.com</urlToOpen>
+    <urlToOpen>https://www.seleniumeasy.com/test/bootstrap-dual-list-box-demo.html</urlToOpen>
     <firstName>"Bill"</firstName>
     <lastName>"Gates"</lastName>
 </Enviroment>
