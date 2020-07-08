@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Enviroment>
-    <urlToOpen>https://www.ynet.co.il</urlToOpen>
+    <urlToOpen>https://www.seleniumeasy.com/test/basic-first-form-demo.html</urlToOpen>
     <firstName>"Bill"</firstName>
     <lastName>"Gates"</lastName>
+    <TimeOut>5</TimeOut>
 </Enviroment>

@@ -3,6 +3,7 @@ import common.mainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
@@ -10,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class business
 {
     protected static WebDriver driver;
-  //  public static mainPage facebookLogin ;
+    public static mainPage seleniumEasy ;
 
     @BeforeClass
     public void start()
@@ -20,21 +21,32 @@ public class business
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //driver.navigate().to("http://www.ynet.co.il");
         String urlToOpen = commonMethodsClass.getData("urlToOpen");
         driver.get(urlToOpen);
+
+        seleniumEasy = PageFactory.initElements(driver, mainPage.class);
     }
-    /*@AfterClass
+    @AfterClass
     public void close()
     {
         driver.quit();
-    }*/
-
-    @Test
-    public void test1_signUp()
-    {
-  /*      facebookLogin.signUp(commonMethodsClass.getData("firstName"),commonMethodsClass.getData("lastName"), "bill.gates@microsoft.com", "12345","28/3/1956");
-        commonMethodsClass.verifyTextInElement(facebookLogin.error, "Your password must be at least 6 characters long. Please try another");*/
     }
 
+    @Test
+    public void test1_verifyMessage()
+    {
+        seleniumEasy.btn_close.click();
+        commonMethodsClass.insertTextInElement(seleniumEasy.txt_message , "Hello");
+        seleniumEasy.btn_show_message.click();
+        commonMethodsClass.verifyTextInElement(seleniumEasy.txt_show_message, "Hello");
+    }
+
+    @Test
+    public void test2_verifyInput()
+    {
+        commonMethodsClass.insertTextInElement(seleniumEasy.txt_a , "3");
+        commonMethodsClass.insertTextInElement(seleniumEasy.txt_b , "2");
+        seleniumEasy.btn_showTotal.click();
+        commonMethodsClass.verifyTextInElement(seleniumEasy.txt_showTotal ,"5");
+    }
 }

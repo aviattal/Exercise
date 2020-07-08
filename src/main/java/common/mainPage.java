@@ -9,10 +9,34 @@ import org.openqa.selenium.support.ui.Select;
 
 public class mainPage
 {
-/*    @FindBy(how = How.NAME, using ="firstname")
-    public WebElement txt_firstName;
+    @FindBy(how = How.ID, using ="user-message")
+    public WebElement txt_message;
 
-    @FindBy(how = How.NAME, using ="lastname")
+    @FindBy(how = How.XPATH , using = "//*[text() = 'Show Message']")
+    public WebElement btn_show_message;
+
+    @FindBy(how = How.XPATH , using = "//*[@id='display']")
+    public WebElement txt_show_message;
+
+    @FindBy(how = How.CLASS_NAME , using = "at-cm-no-button")
+    public WebElement btn_close;
+
+    @FindBy(how = How.ID , using = "sum1")
+    public WebElement txt_a;
+
+    @FindBy(how = How.ID , using = "sum2")
+    public WebElement txt_b;
+
+    @FindBy(how = How.XPATH , using = "//*[@id='gettotal']/button")
+    public WebElement btn_showTotal;
+
+    @FindBy(how = How.ID , using = "displayvalue")
+    public WebElement txt_showTotal;
+
+
+
+
+/*    @FindBy(how = How.NAME, using ="lastname")
     public WebElement txt_lastName;
 
     @FindBy(how = How.NAME, using ="reg_email__")
@@ -20,27 +44,6 @@ public class mainPage
 
     @FindBy(how = How.NAME, using ="reg_email_confirmation__")
     public WebElement txt_email_confirm;
-
-    @FindBy(how = How.NAME, using ="reg_passwd__")
-    public WebElement txt_password;
-
-    @FindBy(how = How.NAME, using ="birthday_month")
-    public WebElement txt_birthday_month;
-
-    @FindBy(how = How.NAME, using ="birthday_day")
-    public WebElement txt_birthday_day;
-
-    @FindBy(how = How.NAME, using ="birthday_year")
-    public WebElement txt_birthday_year;
-
-    @FindBy(how = How.ID, using ="u_0_6")
-    public WebElement radio_female;
-
-    @FindBy(how = How.ID, using ="u_0_7")
-    public WebElement radio_male;
-
-    @FindBy(how = How.ID, using ="u_0_8")
-    public WebElement radio_custom;
 
     @FindBy(how = How.NAME, using ="websubmit")
     public WebElement btn_webSubmit;
