@@ -53,11 +53,11 @@ public class business extends commonMethodsClass
         login.loginAction("viewer", "demo" , "AStrip01");
 
     }
-      @Test
+  /*    @Test
     public void test4_navigateThroughSideMenu()
     {
         commonMethodsClass.mouseOverElements(leftMenuPage.btn_analytics , leftMenuPage.btn_events);
-    }
+    }*/
 
     @Test
     public void test2_verifyOneResult()
