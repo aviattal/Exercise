@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Enviroment>
-    <urlToOpen>https://www.seleniumeasy.com/test/basic-first-form-demo.html</urlToOpen>
-    <firstName>"Bill"</firstName>
-    <lastName>"Gates"</lastName>
-    <TimeOut>5</TimeOut>
+    <urlToOpen>http://demo.appsee.sncqe.com:5000/analytics/home/demo-app#/analytics/custom-events#ios/all/range,04-10-2020,07-09-2020</urlToOpen>
 </Enviroment>

@@ -3,9 +3,11 @@ package common;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.w3c.dom.Document;
@@ -15,7 +17,7 @@ import static org.testng.Assert.assertEquals;
 
 public class commonMethodsClass
 {
-
+    public static Actions action;
 
      static File fxmlFile;
     public static String getData(String nodaName)
@@ -52,4 +54,31 @@ public class commonMethodsClass
     {
         element.sendKeys(text);
     }
+    public static void numOfElements (List<WebElement> elems , int expectedValue)
+    {
+
+        assertEquals(elems.size(),expectedValue);
+    }
+    public static void click(WebElement elem)
+    {
+        elem.click();
+    }
+    public static void mouseOverElements (WebElement elem1, WebElement elem2)
+    {
+        action.moveToElement(elem1).moveToElement(elem2).click().build().perform();
+    }
+    public static void verifyWordContain (List <WebElement> element, String text)
+    {
+
+        for (int i = 0; i < element.size(); i++)
+        {
+            if (element.get(i).getText().contains(text))
+            {
+                System.out.println("the element contains the word");
+            } else
+                System.out.println("the element doesn't contain the word");
+
+        }
+    }
+
 }
