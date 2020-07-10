@@ -14,6 +14,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class commonMethodsClass
 {
@@ -69,16 +70,11 @@ public class commonMethodsClass
     }
     public static void verifyWordContain (List <WebElement> element, String text)
     {
-
         for (int i = 0; i < element.size(); i++)
         {
-            if (element.get(i).getText().contains(text))
-            {
-                System.out.println("the element contains the word");
-            } else
-                System.out.println("the element doesn't contain the word");
-
+            assertTrue(element.get(i).getText().contains(text));
         }
+
     }
 
 }

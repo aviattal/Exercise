@@ -1,7 +1,4 @@
-import common.commonMethodsClass;
-import common.leftMenu;
-import common.loginPage;
-import common.mainPage;
+import common.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -13,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -24,6 +22,7 @@ public class business extends commonMethodsClass
     public static mainPage eventPage ;
     public static loginPage login ;
     public static leftMenu leftMenuPage;
+    public static sessions session;
     Actions action;
 
     @BeforeClass
@@ -40,6 +39,7 @@ public class business extends commonMethodsClass
         eventPage = PageFactory.initElements(driver, mainPage.class);
         login = PageFactory.initElements(driver, loginPage.class);
         leftMenuPage = PageFactory.initElements(driver, leftMenu.class);
+        session = PageFactory.initElements(driver, sessions.class);
     }
     @AfterClass
     public void close()
@@ -51,7 +51,6 @@ public class business extends commonMethodsClass
     public void test1_login()
     {
         login.loginAction("viewer", "demo" , "AStrip01");
-
     }
   /*    @Test
     public void test4_navigateThroughSideMenu()
@@ -67,7 +66,6 @@ public class business extends commonMethodsClass
         commonMethodsClass.verifyTextInElement(eventPage.txt_result , "ItemAddedToCart");
         commonMethodsClass.numOfElements(eventPage.webElementList,1);
         commonMethodsClass.verifyWordContain(eventPage.webElementList , "ItemAddedToCart");
-
     }
     @Test
     public void test3_verifyTwoResults()
@@ -81,7 +79,14 @@ public class business extends commonMethodsClass
         eventPage.txt_searchField.sendKeys(Keys.RETURN);
         commonMethodsClass.numOfElements(eventPage.webElementList,2);
         commonMethodsClass.verifyWordContain(eventPage.webElementList , "Purchase");
-
+    }
+    @Test
+    public void test5_verifyEventNameInSessionPage()
+    {
+        eventPage.btn_play.click();
+        ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        commonMethodsClass.verifyTextInElement(session.txt_sessionEvent, "Events: PurchaseStarted");
     }
 
 }
